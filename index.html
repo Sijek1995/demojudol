@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Platform Game - SijekDemo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="nav-toggle" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <img src="https://via.placeholder.com/50/1a237e/ffffff?text=SD" alt="Logo" class="logo">
+            <div>
+                <span class="site-title">SijekDemo Arcade</span>
+                <span class="demo-badge">DEMO GAMES</span>
+            </div>
+        </div>
+        <button class="demo-btn" onclick="showDemoAlert()">
+            <i class="fas fa-gamepad"></i> PLAY DEMO
+        </button>
+    </header>
+
+    <!-- GAME SIDEBARS TOGGLE BUTTONS -->
+    <div class="sidebar-toggle left-toggle" onclick="toggleGameSidebar('left')">
+        <i class="fas fa-chevron-right"></i>
+    </div>
+    
+    <div class="sidebar-toggle right-toggle" onclick="toggleGameSidebar('right')">
+        <i class="fas fa-chevron-left"></i>
+    </div>
+
+    <!-- LEFT GAME SIDEBAR -->
+    <div class="game-sidebar left-sidebar" id="leftSidebar">
+        <h3 class="sidebar-title">
+            <i class="fas fa-gamepad"></i> ARCADE GAMES
+        </h3>
+        
+        <div class="game-row">
+            <div class="game-row-title">Shooter Games</div>
+            
+            <div class="game-item" onclick="launchGame('Krunker.io', 'https://krunker.io')">
+                <div class="game-icon">
+                    <i class="fas fa-crosshairs"></i>
+                </div>
+                <h4>Krunker.io</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">FPS Browser</p>
+            </div>
+            
+            <div class="game-item" onclick="launchGame('Shell Shockers', 'https://shellshock.io')">
+                <div class="game-icon">
+                    <i class="fas fa-egg"></i>
+                </div>
+                <h4>Shell Shockers</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Egg Shooter</p>
+            </div>
+            
+            <div class="game-item" onclick="launchGame('1v1.LOL', 'https://1v1.lol')">
+                <div class="game-icon">
+                    <i class="fas fa-fist-raised"></i>
+                </div>
+                <h4>1v1.LOL</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Build & Fight</p>
+            </div>
+        </div>
+        
+        <div class="game-row">
+            <div class="game-row-title">Classic Games</div>
+            
+            <div class="game-item" onclick="launchGame('Slither.io', 'https://slither.io')">
+                <div class="game-icon">
+                    <i class="fas fa-snake"></i>
+                </div>
+                <h4>Slither.io</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Snake Battle</p>
+            </div>
+            
+            <div class="game-item" onclick="launchGame('Agar.io', 'https://agar.io')">
+                <div class="game-icon">
+                    <i class="fas fa-circle"></i>
+                </div>
+                <h4>Agar.io</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Cell Battle</p>
+            </div>
+            
+            <div class="game-item" onclick="launchGame('Diep.io', 'https://diep.io')">
+                <div class="game-icon">
+                    <i class="fas fa-shapes"></i>
+                </div>
+                <h4>Diep.io</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Tank Battle</p>
+            </div>
+        </div>
+        
+        <div class="game-row">
+            <div class="game-row-title">Racing Games</div>
+            
+            <div class="game-item" onclick="launchGame('Moto X3M', 'https://poki.com/en/g/moto-x3m')">
+                <div class="game-icon">
+                    <i class="fas fa-motorcycle"></i>
+                </div>
+                <h4>Moto X3M</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Bike Stunts</p>
+            </div>
+            
+            <div class="game-item" onclick="launchGame('Drift Hunters', 'https://www.crazygames.com/game/drift-hunters')">
+                <div class="game-icon">
+                    <i class="fas fa-car-side"></i>
+                </div>
+                <h4>Drift Hunters</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Drift Racing</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT GAME SIDEBAR -->
+    <div class="game-sidebar right-sidebar" id="rightSidebar">
+        <h3 class="sidebar-title">
+            <i class="fas fa-dice"></i> MULTIPLAYER
+        </h3>
+        
+        <div class="game-row">
+            <div class="game-row-title">Battle Royale</div>
+            
+            <div class="game-item" onclick="launchGame('Surviv.io', 'https://surviv.io')">
+                <div class="game-icon">
+                    <i class="fas fa-skull-crossbones"></i>
+                </div>
+                <h4>Surviv.io</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">2D Battle Royale</p>
+            </div>
+            
+            <div class="game-item" onclick="launchGame('ZombsRoyale.io', 'https://zombsroyale.io')">
+                <div class="game-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h4>ZombsRoyale</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Top-Down BR</p>
+            </div>
+        </div>
+        
+        <div class="game-row">
+            <div class="game-row-title">.IO Games</div>
+            
+            <div class="game-item" onclick="launchGame('Skribbl.io', 'https://skribbl.io')">
+                <div class="game-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h4>Skribbl.io</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Drawing Game</p>
+            </div>
+            
+            <div class="game-item" onclick="launchGame('Gartic.io', 'https://gartic.io')">
+                <div class="game-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h4>Gartic.io</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Drawing & Guessing</p>
+            </div>
+            
+            <div class="game-item" onclick="launchGame('Bonk.io', 'https://bonk.io')">
+                <div class="game-icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h4>Bonk.io</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Physics Battle</p>
+            </div>
+        </div>
+        
+        <div class="game-row">
+            <div class="game-row-title">Strategy Games</div>
+            
+            <div class="game-item" onclick="launchGame('Tetr.io', 'https://tetr.io')">
+                <div class="game-icon">
+                    <i class="fas fa-th-large"></i>
+                </div>
+                <h4>Tetr.io</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Modern Tetris</p>
+            </div>
+            
+            <div class="game-item" onclick="launchGame('Chess.com', 'https://chess.com')">
+                <div class="game-icon">
+                    <i class="fas fa-chess"></i>
+                </div>
+                <h4>Chess.com</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Online Chess</p>
+            </div>
+            
+            <div class="game-item" onclick="launchGame('Lichess', 'https://lichess.org')">
+                <div class="game-icon">
+                    <i class="fas fa-chess-board"></i>
+                </div>
+                <h4>Lichess</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Free Chess</p>
+            </div>
+        </div>
+        
+        <div class="game-row">
+            <div class="game-row-title">Sports Games</div>
+            
+            <div class="game-item" onclick="launchGame('Basketball.io', 'https://basketball.io')">
+                <div class="game-icon">
+                    <i class="fas fa-basketball-ball"></i>
+                </div>
+                <h4>Basketball.io</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Basketball</p>
+            </div>
+            
+            <div class="game-item" onclick="launchGame('Soccer.io', 'https://soccer.io')">
+                <div class="game-icon">
+                    <i class="fas fa-futbol"></i>
+                </div>
+                <h4>Soccer.io</h4>
+                <p><span class="online-status online"></span> Online</p>
+                <p style="font-size: 10px;">Football Game</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- SIDEBAR MENU -->
+    <nav class="sidebar" id="sidebar">
+        <div class="menu-item" onclick="scrollToSection('home')">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+        </div>
+        <div class="menu-item" onclick="scrollToSection('about')">
+            <i class="fas fa-dice"></i>
+            <span>Demo Game</span>
+        </div>
+        
+        <div class="menu-divider"></div>
+        
+        <div class="menu-item" onclick="toggleGameSidebar('left')">
+            <i class="fas fa-gamepad"></i>
+            <span>Arcade Games</span>
+        </div>
+        <div class="menu-item" onclick="toggleGameSidebar('right')">
+            <i class="fas fa-users"></i>
+            <span>Multiplayer Games</span>
+        </div>
+        
+        <div class="menu-divider"></div>
+        
+        <div class="menu-item" onclick="scrollToSection('contact')">
+            <i class="fas fa-comments"></i>
+            <span>Live Chat Demo</span>
+        </div>
+        <div class="menu-item" onclick="showFeatureAlert('Favorites')">
+            <i class="fas fa-star"></i>
+            <span>Favorite Games</span>
+        </div>
+        <div class="menu-item" onclick="showFeatureAlert('History')">
+            <i class="fas fa-history"></i>
+            <span>Play History</span>
+        </div>
+        
+        <div class="menu-divider"></div>
+        
+        <div class="menu-item" onclick="showLogoutAlert()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout Demo</span>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="mainContent">
+        <!-- HOME SECTION -->
+        <section id="home" class="section active">
+            <h1 class="section-title">Arcade Demo Platform</h1>
+            <p class="section-subtitle">
+                Website demo dengan koleksi game online populer yang bisa dimainkan langsung di browser.
+                Klik tombol panah di samping untuk membuka sidebar game!
+            </p>
+            
+            <div class="video-container">
+                <video controls autoplay muted poster="https://via.placeholder.com/900x500/1a237e/ffffff?text=Demo+Video">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutaran video.
+                </video>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-info-circle"></i> Cara Menggunakan Demo</h3>
+                <p>1. Klik tombol <strong>panah di sisi kiri/kanan</strong> untuk membuka sidebar game</p>
+                <p>2. Pilih game yang ingin dimainkan dari koleksi yang tersedia</p>
+                <p>3. Game akan terbuka di tab baru (semua game eksternal)</p>
+                <p>4. Nikmati bermain game secara gratis!</p>
+                
+                <div class="warning-box">
+                    <p><strong><i class="fas fa-exclamation-triangle"></i> PERINGATAN DEMO:</strong> Semua game adalah eksternal dan dimiliki oleh pengembang masing-masing. Website ini hanya sebagai portal demo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section">
+            <h1 class="section-title">Koleksi Game Demo</h1>
+            <p class="section-subtitle">
+                Temukan berbagai macam game online populer yang bisa dimainkan langsung di browser tanpa download.
+            </p>
+            
+            <div class="game-grid">
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/400x200/ff9800/ffffff?text=Krunker.io" alt="Krunker.io">
+                    <div class="game-card-content">
+                        <h3>Krunker.io</h3>
+                        <p>FPS browser-based yang cepat dengan grafis pixel art. Multiplayer shooter dengan berbagai mode permainan.</p>
+                        <button class="demo-btn" style="margin-top: 15px; padding: 10px 20px;" onclick="launchGame('Krunker.io', 'https://krunker.io')">
+                            <i class="fas fa-play"></i> Main Sekarang
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/400x200/4caf50/ffffff?text=Slither.io" alt="Slither.io">
+                    <div class="game-card-content">
+                        <h3>Slither.io</h3>
+                        <p>Game snake modern multiplayer. Makan titik-titik untuk tumbuh lebih panjang dan hindari ular lain!</p>
+                        <button class="demo-btn" style="margin-top: 15px; padding: 10px 20px;" onclick="launchGame('Slither.io', 'https://slither.io')">
+                            <i class="fas fa-play"></i> Main Sekarang
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <img src="https://via.placeholder.com/400x200/2196f3/ffffff?text=Agar.io" alt="Agar.io">
+                    <div class="game-card-content">
+                        <h3>Agar.io</h3>
+                        <p>Game sel multiplayer yang ikonik. Makan sel lebih kecil, hindari sel lebih besar, dan jadi yang terbesar!</p>
+                        <button class="demo-btn" style="margin-top: 15px; padding: 10px 20px;" onclick="launchGame('Agar.io', 'https://agar.io')">
+                            <i class="fas fa-play"></i> Main Sekarang
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section">
+            <h1 class="section-title">Live Chat & Support</h1>
+            <p class="section-subtitle">
+                Fitur live chat demo dan dukungan untuk portal game ini.
+            </p>
+            
+            <div class="audio-player-container">
+                <h3 style="color: var(--primary-color); margin-bottom: 20px;">
+                    <i class="fas fa-headphones"></i> Panduan Audio Demo
+                </h3>
+                <audio controls style="width: 100%;">
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung pemutar audio.
+                </audio>
+                <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">
+                    Dengarkan panduan penggunaan portal game demo ini.
+                </p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Total Game</h3>
+                    <p style="font-size: 2rem; color: var(--primary-color); font-weight: bold;">20+</p>
+                    <p>Game online tersedia</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Multiplayer</h3>
+                    <p style="font-size: 2rem; color: var(--primary-color); font-weight: bold;">100%</p>
+                    <p>Semua game multiplayer</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-plug"></i>
+                    <h3>Status Server</h3>
+                    <p style="font-size: 2rem; color: #4caf50; font-weight: bold;">ONLINE</p>
+                    <p>Semua game dapat diakses</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p><strong>SijekDemo Arcade - Portal Game Online Demo</strong></p>
+        <p>Website ini adalah portal demonstrasi menuju game-game online populer.</p>
+        <p>Semua game adalah milik pengembang masing-masing dan dapat diakses gratis.</p>
+        <p style="margin-top: 15px; color: rgba(255,255,255,0.7);">
+            <i class="fas fa-gamepad"></i> © 2024 SijekDemo Arcade - Game Portal Demo
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
